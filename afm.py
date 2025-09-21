@@ -1,1 +1,1 @@
-import pandas as pd import os os.chdir("/Users/paulbenjamins/Desktop/data_afm")df = pd.read_csv("factors.csv")df
+import pandas as pd import os os.chdir("/Users/paulbenjamins/Desktop/data_afm")df = pd.read_csv("factors.csv")dfdf.columns
