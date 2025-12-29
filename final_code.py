@@ -22,9 +22,7 @@ df = pd.read_csv("factors.csv")
 df = df.drop(columns=(["Unnamed: 0","UMD_Europe","UMD_Global","UMD_US","D.Recession","P.Recession"]))
 df["RF"] = df["RF"] / 100
 
-
 ###
-
 
 #einfaches Regressionsmodel
 X = sm.add_constant(df["Mkt_Europe"])   
