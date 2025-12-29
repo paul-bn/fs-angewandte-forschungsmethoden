@@ -63,7 +63,6 @@ plt.axvline(0, linewidth=1, color="black")
 plt.xlabel("Überschussrenditen des Marktportfolios")
 plt.ylabel("Überschussrenditen der BAB-Strategie")
 plt.tight_layout()
-plt.figure(dpi=1000)
 plt.show()
 
 
@@ -80,8 +79,7 @@ plt.grid(True)
 plt.title("Marktportfolio")
 plt.xlabel("Theoretische Quantile der Normalverteilung")
 plt.ylabel("Empirische Quantile des Datensamples")
-plt.show() 
-
+plt.show()
 
 #Kurtosis nach Fisher
 kurtosis(df["BAB_Europe"], fisher=True)
@@ -152,7 +150,6 @@ ax.boxplot(
 )
 
 ax.tick_params(axis='both', labelsize=20)
-
 ax.axhline(0, color='black', linewidth=1)
 plt.show()
 
