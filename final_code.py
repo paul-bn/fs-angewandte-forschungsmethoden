@@ -19,7 +19,7 @@ os.chdir("/Users/paulbenjamins/Desktop/data_afm")
 
 #Rohdaten in DataFrame einlesen und Rohdatei anpassen
 df = pd.read_csv("factors.csv")
-df = df.drop(columns=(["Unnamed: 0","UMD_Europe","UMD_Global","UMD_US","D.Recession","P.Recession"]))
+df = df.drop(columns=(["Unnamed: 0","UMD_Europe","UMD_Global","UMD_US","D.Recession","P.Recession","Mkt_Global","Mkt_US","BAB_Global","BAB_US","SMB_Global","SMB_US","HML_Global","HML_US"]))
 df["RF"] = df["RF"] / 100
 
 
@@ -201,3 +201,18 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+
+#Anhang, Deskriptive Statistik der Hauptvariablen
+cols = df.loc[:, "Mkt_Europe":"SMB_Europe"]
+
+anhang_df = pd.DataFrame({
+    "mean": cols.mean(),
+    "std": cols.std(),
+    "min": cols.min(),
+    "max": cols.max()
+})
+anhang_df.index = ["Market", "BAB", "HML", "SMB"]
+
+anhang_df.transpose().to_excel("anhang.xlsx")
+
