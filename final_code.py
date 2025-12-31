@@ -178,7 +178,7 @@ results_ff_df.to_excel("multiple reg.xlsx")
 het_breuschpagan(ff_model.resid, ff_model.model.exog)
 
 
-#vif Test, Multikollinearität der erklärenden Variablen im FF3
+#vif Test, Multikollinearität der erklärenden Variablen im FF3-Modell
 X = df[["Mkt_Europe","SMB_Europe","HML_Europe"]]
 vif = pd.Series(
     [variance_inflation_factor(X.values, i) for i in range(X.shape[1])],
